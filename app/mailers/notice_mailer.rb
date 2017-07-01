@@ -9,6 +9,6 @@ class NoticeMailer < ApplicationMailer
     @picture = picture
 
     mail to: "tororopop@gmail.com"
-         subject: "【instagram-copy】画像が投稿されました"
+         subject:'【instagram】画像が投稿されました'
   end
 end
