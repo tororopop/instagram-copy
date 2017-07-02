@@ -9,15 +9,37 @@
 </head>
 <body>
   <header>
-    <ul>
-      <% if user_signed_in? %>
-        <li><%= link_to 'マイページ', edit_user_registration_path %></li>
-        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
-      <% else %>
-        <li><%= link_to 'ログイン', new_user_session_path %></li>
-        <li><%= link_to 'サインアップ', new_user_registration_path %></li>
-      <% end %>
-    </ul>
+    <section class="function container-fluid">
+      <div class="row">
+        <div class="function-images">
+          <div class="col-xs-2 col-xs-offset-1">
+              <div class="function-image">
+                  <a href="/"><img src="<%= asset_path "home.png" %>"></a>
+              </div>
+          </div>
+          <div class="col-xs-2">
+              <div class="function-image">
+                  <img src="<%= asset_path "search.png" %>">
+              </div>
+          </div>
+          <div class="col-xs-2">
+              <div class="function-image">
+                  <a href="/pictures/new"><img src="<%= asset_path "camera.png" %>"></a>
+              </div>
+          </div>
+          <div class="col-xs-2">
+              <div class="function-image">
+                  <img src="<%= asset_path "big_heart.png" %>">
+              </div>
+          </div>
+          <div class="col-xs-2">
+              <div class="function-image">
+                  <a href="/users/edit"><img src="<%= asset_path "user.png" %>"></a>
+              </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </header>
   <p class="flash"><%= notice %><%= alert %></p>
 

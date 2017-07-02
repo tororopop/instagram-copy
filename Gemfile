@@ -68,3 +68,5 @@ end
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
+
+gem 'twitter-bootstrap-rails'
