@@ -1,3 +1,15 @@
-// Place all the styles related to the pictures controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.function-image{
+  width:auto;
+  height:auto;
+  max-width:50px;
+  max-height:50px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container{
+  padding-top: 60px;
+  padding-bottom: 85px;
+  max-width: 100%;
+}

@@ -1,10 +1,9 @@
 <div class="container">
-  <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
-      <%= link_to "画像を投稿する", new_picture_path, class: 'btn btn-default' %>
+  <div class="wrapper col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
     <% @pictures.reverse_each do |picture| %>
     <div class="row">
     <div class="row"><%= profile_img_thumb(picture.user) if profile_img_thumb(picture.user) %><%= picture.user.name %></div>
-      <%= image_tag(picture.file_url, :width => "300") %>
+      <%= image_tag(picture.file_url, :width => "800") %>
       <br>
       <%= image_tag("heart.png", :width => "20") %>
       <%= image_tag("comment.png", :width => "20") %>
