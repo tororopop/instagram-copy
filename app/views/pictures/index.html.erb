@@ -1,13 +1,17 @@
-<p class="flash"><%= notice %><%= alert %></p>
-
 <div class="container">
   <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
-    <h1>投稿一覧</h1>
       <%= link_to "画像を投稿する", new_picture_path, class: 'btn btn-default' %>
     <% @pictures.reverse_each do |picture| %>
     <div class="row">
+    <div class="row"><%= profile_img_thumb(picture.user) if profile_img_thumb(picture.user) %><%= picture.user.name %></div>
       <%= image_tag(picture.file_url, :width => "300") %>
-      <div class="row"><%= picture.caption %></div>
+      <br>
+      <%= image_tag("heart.png", :width => "20") %>
+      <%= image_tag("comment.png", :width => "20") %>
+      <%= image_tag("airplane.png", :width => "20") %>
+
+      <div class="row"><%= picture.user.name %> <%= picture.caption %></div>
+      <div class="row"><%= picture.updated_at.strftime("%m/%d(#{%w(日 月 火 水 木 金 土)[picture.updated_at.wday]}) %k:%M") %></div>
       <%= link_to "編集", edit_picture_path(picture.id), class: 'btn btn-default btn-sm btn-success' %>
       <%= link_to "削除", picture_path(picture.id), method: :delete, data: { confirm: '本当に削除していいですか？'}, class: 'btn btn-default btn-sm btn btn-danger' %>
       <br>
