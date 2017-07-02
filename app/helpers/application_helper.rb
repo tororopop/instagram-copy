@@ -7,7 +7,7 @@ module ApplicationHelper
     else
       img_url = 'no_image.png'
     end
-    image_tag(img_url, :size => "200x200", alt: user.name)
+    image_tag(img_url, :size => "100x100", alt: user.name)
   end
 
   def profile_img_thumb(user)
@@ -18,6 +18,6 @@ module ApplicationHelper
     else
       img_url = 'no_image.png'
     end
-    image_tag(img_url, :width => "20", alt: user.name)
+    image_tag(img_url, :width => "30", alt: user.name)
   end
 end
