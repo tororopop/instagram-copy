@@ -4,7 +4,7 @@
   <div class="wrapper col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
 
     <% @pictures.reverse_each do |picture| %>
-      <div style="background-color:#fff; border:#DCDCDC 1px solid;border-radius: 4px;padding-left: 15px;padding-right: 15px;">
+      <div style="text-align:left; background-color:#fff; border:#DCDCDC 1px solid;border-radius: 4px;padding-left: 15px;padding-right: 15px;">
         <div class="row"><%= profile_img_thumb(picture.user) if profile_img_thumb(picture.user) %><%= picture.user.name %></div>
         <div class="row"><%= image_tag(picture.file_url, :width => "800") %></div>
         <div class="row"><%= image_tag("heart.png", :width => "20") %>
