@@ -1,15 +1,64 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body{
+    text-align: center;
+}
+
 .function-image{
-  width:auto;
-  height:auto;
-  max-width:50px;
-  max-height:50px;
+  max-width:40px;
+  max-height:40px;
   display: block;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .container{
   padding-top: 60px;
-  padding-bottom: 85px;
+  padding-bottom: 50px;
   max-width: 100%;
+}
+
+#menu-wrap {
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color:#fff;
+  transition: .3s;
+  border-bottom:#DCDCDC 1px solid;
+}
+
+footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  height: 54px;
+}
+
+footer ul {
+  margin: 0 auto;
+  list-style: none;
+}
+
+footer ul a {
+  display: block;
+  padding: 15px;
+  text-decoration: none;
+}
+
+footer li {
+  float: left;
+  width: auto;
+}
+
+footer ul:after {
+  content: "";
+  display: block;
+  clear: both;
 }

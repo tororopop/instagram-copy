@@ -1,21 +1,27 @@
 <div class="container">
-  <div class="wrapper col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
-    <% @pictures.reverse_each do |picture| %>
-    <div class="row">
-    <div class="row"><%= profile_img_thumb(picture.user) if profile_img_thumb(picture.user) %><%= picture.user.name %></div>
-      <%= image_tag(picture.file_url, :width => "800") %>
-      <br>
-      <%= image_tag("heart.png", :width => "20") %>
-      <%= image_tag("comment.png", :width => "20") %>
-      <%= image_tag("airplane.png", :width => "20") %>
+  <p class="flash" style="text-align: center;"><%= notice %><%= alert %></p>
 
-      <div class="row"><%= picture.user.name %> <%= picture.caption %></div>
-      <div class="row"><%= picture.updated_at.strftime("%m/%d(#{%w(日 月 火 水 木 金 土)[picture.updated_at.wday]}) %k:%M") %></div>
-      <%= link_to "編集", edit_picture_path(picture.id), class: 'btn btn-default btn-sm btn-success' %>
-      <%= link_to "削除", picture_path(picture.id), method: :delete, data: { confirm: '本当に削除していいですか？'}, class: 'btn btn-default btn-sm btn btn-danger' %>
+  <div class="wrapper col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+
+    <% @pictures.reverse_each do |picture| %>
+      <div style="background-color:#fff; border:#DCDCDC 1px solid;border-radius: 4px;padding-left: 15px;padding-right: 15px;">
+        <div class="row"><%= profile_img_thumb(picture.user) if profile_img_thumb(picture.user) %><%= picture.user.name %></div>
+        <div class="row"><%= image_tag(picture.file_url, :width => "800") %></div>
+        <div class="row"><%= image_tag("heart.png", :width => "20") %>
+          <%= image_tag("comment.png", :width => "20") %>
+          <%= image_tag("airplane.png", :width => "20") %></div>
+        <div class="row"><%= picture.user.name %> <%= picture.caption %></div>
+        <div class="row" style="border-bottom:#DCDCDC 1px solid;"><%= picture.updated_at.strftime("%m/%d(#{%w(日 月 火 水 木 金 土)[picture.updated_at.wday]}) %k:%M") %></div>
+
+        <div style="text-align:right;">
+          <div class="row btn-group"  role="group">
+            <%= link_to "編集", edit_picture_path(picture.id), class: 'btn btn-default btn-sm btn-success' %>
+            <%= link_to "削除", picture_path(picture.id), method: :delete, data: { confirm: '本当に削除していいですか？'}, class: 'btn btn-default btn-sm btn btn-danger' %>
+          </div>
+        </div>
+      </div>
       <br>
       <br>
-    </div>
     <% end %>
   </div>
 </div>

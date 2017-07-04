@@ -7,43 +7,64 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body style="background-color:#fafafa;">
   <header>
-    <section class="function container-fluid">
-      <div class="row">
-        <div class="function-images">
-          <div class="col-xs-2 col-xs-offset-1">
-              <div class="function-image">
-                  <a href="/"><img src="<%= asset_path "home.png" %>"></a>
-              </div>
-          </div>
-          <div class="col-xs-2">
-              <div class="function-image">
-                  <img src="<%= asset_path "search.png" %>">
-              </div>
-          </div>
-          <div class="col-xs-2">
-              <div class="function-image">
-                  <a href="/pictures/new"><img src="<%= asset_path "camera.png" %>"></a>
-              </div>
-          </div>
-          <div class="col-xs-2">
-              <div class="function-image">
-                  <img src="<%= asset_path "big_heart.png" %>">
-              </div>
-          </div>
-          <div class="col-xs-2">
-              <div class="function-image">
+    <% if user_signed_in? %>
+      <section id="menu-wrap" class="function container-fluid">
+        <div class="row">
+          <div class="function-images">
+            <div class="col-xs-2 col-xs-offset-1">
+                <div class="function-image">
+                    <a href="/"><img src="<%= asset_path "home.png" %>"></a>
+                </div>
+            </div>
+            <div class="col-xs-2">
+                <div class="function-image">
+                    <a href="/"><img src="<%= asset_path "search.png" %>"></a>
+                </div>
+            </div>
+            <div class="col-xs-2">
+                <div class="function-image">
+                    <a href="/pictures/new"><img src="<%= asset_path "camera.png" %>"></a>
+                </div>
+            </div>
+            <div class="col-xs-2">
+                <div class="function-image">
+                    <a href="/"><img src="<%= asset_path "big_heart.png" %>"></a>
+                </div>
+            </div>
+            <div class="col-xs-2">
+                <div class="function-image">
                   <a href="/users/edit"><img src="<%= asset_path "user.png" %>"></a>
-              </div>
+                </div>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    <% else %>
+      <section id="menu-wrap" style="font-size: 20px;">
+        INSTAGRAM-COPY
+      </section>
+    <% end %>
   </header>
-  <p class="flash"><%= notice %><%= alert %></p>
 
 <%= yield %>
-
+    <br>
+    <br>
+  <footer>
+    <ul>
+      <li><a>INSTAGRAMについて</a></li>
+      <li><a>サポート</a></li>
+      <li><a>ブログ</a></li>
+      <li><a>プレス</a></li>
+      <li><a>API</a></li>
+      <li><a>求人</a></li>
+      <li><a>プライバシー</a></li>
+      <li><a>利用規約</a></li>
+      <li><a>ディレクトリ</a></li>
+      <li><a>言語</a></li>
+      <li><a>@ 2017 dive into code</a></li>
+    </ul>
+  </footer>
 </body>
 </html>
