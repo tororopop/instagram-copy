@@ -1,8 +1,6 @@
   <div style="background-color:#fff; border:#DCDCDC 1px solid;border-radius: 4px;padding-left: 15px;padding-right: 15px;">
     <h2>ログイン</h2>
 
-    <%= alert %>
-
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <%= devise_error_messages! %>
 
